@@ -13,7 +13,8 @@
   "exports": {
     ".": {
       "import": "./dist/ndk-react.es.js",
-      "require": "./dist/ndk-react.umd.js"
+      "require": "./dist/ndk-react.umd.js",
+      "types": "./dist/index.d.ts"
     }
   },
   "main": "./dist/ndk-react.umd.js",
