@@ -1,7 +1,7 @@
 {
   "name": "@nostr-dev-kit/ndk-react",
   "license": "Apache-2.0",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "tsc && vite build --watch",
@@ -44,8 +44,8 @@
     "vite-tsconfig-paths": "^3.5.0"
   },
   "peerDependencies": {
-    "react": "16.8.0 || >=17.x",
-    "react-dom": "16.8.0 || >=17.x"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "repository": {
     "type": "git",
