@@ -4,6 +4,7 @@ import Events from "@/components/Events";
 import Nav from "@/components/site/Nav";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
+import Users from "@/components/Users";
 
 export default function Home() {
   return (
@@ -22,9 +23,17 @@ export default function Home() {
                 a set of components that wrap the NDK library and make it easy
                 to use in React.
               </p>
+
+              <div>
+                <a href="#GetStarted">Get Started</a> |{" "}
+                <a href="#Signers">Signers</a> | <a href="#Events">Events</a> |{" "}
+                <a href="#Users">Users</a>
+              </div>
+
               <GetStarted />
               <Signers />
               <Events />
+              <Users />
             </div>
           </div>
         </div>

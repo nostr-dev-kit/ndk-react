@@ -1,7 +1,7 @@
 {
   "name": "@nostr-dev-kit/ndk-react",
   "license": "Apache-2.0",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "scripts": {
     "dev": "tsc && vite build --watch",

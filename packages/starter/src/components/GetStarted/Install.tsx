@@ -1,5 +1,7 @@
 export default function Install() {
-  let code = "npm install @nostr-dev-kit/ndk-react";
+  let code = "npm install @nostr-dev-kit/ndk\n";
+  code += "npm install @nostr-dev-kit/ndk-react";
+
   return (
     <>
       <h3>Install</h3>
@@ -10,7 +12,7 @@ export default function Install() {
       </pre>
 
       <p>
-        To get started with NDK-React, install the package from npm or yarn.
+        To get started with NDK-React, install the packages:
       </p>
 
       <pre>

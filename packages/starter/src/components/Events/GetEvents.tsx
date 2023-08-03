@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { NDKFilter, NDKEvent } from "@nostr-dev-kit/ndk";
-import { useNDK, parseContent } from "@nostr-dev-kit/ndk-react";
-import Button from "../common/button";
+import { useNDK } from "@nostr-dev-kit/ndk-react";
 
 export default function GetEvents() {
   const { fetchEvents } = useNDK();
@@ -49,7 +48,7 @@ export default function GetEvents() {
         <code>{code}</code>
       </pre>
 
-      <h4>Demo</h4>
+      {/* <h4>Demo</h4>
 
       <Button
         label={loading ? "..." : "Get Events"}
@@ -63,7 +62,7 @@ export default function GetEvents() {
         return content.map(({ type, value }, i) => {
           if (type === "text") return <span key={index}>{value}</span>;
         });
-      })}
+      })} */}
     </>
   );
 }

@@ -4,7 +4,7 @@ import SignPublishEvent from "./SignPublishEvent";
 export default function Events() {
   return (
     <>
-      <h2>Events</h2>
+      <h2 id="Events">Events</h2>
       <GetEvents />
       <SignPublishEvent />
     </>

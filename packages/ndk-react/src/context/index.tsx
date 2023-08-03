@@ -5,9 +5,12 @@ import NDK, {
   NDKNip07Signer,
   NDKNip46Signer,
   NDKPrivateKeySigner,
+  NDKUser,
+  NDKUserProfile,
 } from "@nostr-dev-kit/ndk";
 import NDKInstance from "./instance";
 import { _loginWithNip07, _loginWithNip46, _loginWithSecret } from "./signers";
+import { Users } from "./Users";
 
 interface NDKContext {
   ndk: NDK | undefined;
@@ -50,6 +53,8 @@ interface NDKContext {
         }
       | undefined
   ) => Promise<undefined | NDKEvent>;
+  getUser: (_: string) => NDKUser;
+  getProfile: (_: string) => NDKUserProfile;
 }
 
 const NDKContext = createContext<NDKContext>({
@@ -60,6 +65,12 @@ const NDKContext = createContext<NDKContext>({
   loginWithSecret: (_: string) => Promise.resolve(undefined),
   loginWithNip07: () => Promise.resolve(undefined),
   signPublishEvent: (_: NDKEvent, __?: {}) => Promise.resolve(undefined),
+  getUser: (_: string) => {
+    return NDKUser.prototype;
+  },
+  getProfile: (_: string) => {
+    return {};
+  },
 });
 
 const NDKProvider = ({
@@ -70,6 +81,7 @@ const NDKProvider = ({
 }>) => {
   const { ndk, signer, setSigner, fetchEvents, signPublishEvent } =
     NDKInstance(relayUrls);
+  const { getUser, getProfile } = Users(ndk);
 
   async function loginWithNip46(npub: string, sk?: string) {
     if (ndk === undefined) return undefined;
@@ -108,6 +120,8 @@ const NDKProvider = ({
         loginWithNip46,
         loginWithSecret,
         signPublishEvent,
+        getUser,
+        getProfile,
       }}
     >
       {children}

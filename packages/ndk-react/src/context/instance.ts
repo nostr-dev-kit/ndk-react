@@ -8,11 +8,12 @@ import NDK, {
 } from "@nostr-dev-kit/ndk";
 
 export default function NDKInstance(explicitRelayUrls: string[]) {
+  const loaded = useRef(false);
+
   const [ndk, _setNDK] = useState<NDK | undefined>(undefined);
   const [signer, _setSigner] = useState<
     NDKPrivateKeySigner | NDKNip46Signer | NDKNip07Signer | undefined
   >(undefined);
-  const loaded = useRef(false);
 
   useEffect(() => {
     async function load() {

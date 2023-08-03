@@ -5,7 +5,7 @@ import LogInSecret from "./LogInSecret";
 export default function Signers() {
   return (
     <>
-      <h2>Signers</h2>
+      <h2 id="Signers">Signers</h2>
       <LogInExtension />
       <LogInNostrConnect />
       <LogInSecret />
