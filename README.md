@@ -28,10 +28,10 @@ yarn bootstrap
 yarn start:module
 ```
 
-3. on second Terminal, start starter example:
+3. on second Terminal, start docs example:
 
 ```bash
-yarn start:starter
+yarn start:docs
 ```
 
 4. start coding!

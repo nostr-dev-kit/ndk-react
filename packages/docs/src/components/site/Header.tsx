@@ -8,6 +8,11 @@ export default function Header() {
         name="description"
         content="NDK React is a React library that makes it easy to build Nostr-related applications using React (and NextJS)."
       />
+      <link
+        rel="icon"
+        sizes="32x32"
+        href="/ndk.svg"
+      />
     </Head>
   );
 }

@@ -5,11 +5,13 @@
   "private": true,
   "scripts": {
     "bootstrap": "yarn install && yarn lerna bootstrap",
-    "start:starter": "lerna exec --scope @nostr-dev-kit/ndk-react-starter -- yarn dev",
+    "start:docs": "lerna exec --scope @nostr-dev-kit/ndk-react-docs -- yarn dev",
     "start:module": "lerna exec --scope @nostr-dev-kit/ndk-react -- yarn dev",
-    "build": "lerna link && yarn build:module && yarn build:react && yarn build:contracts && yarn build:demo",
-    "build:starter": "lerna exec --scope @nostr-dev-kit/ndk-react-starter -- yarn build",
-    "build:module": "lerna exec --scope @nostr-dev-kit/ndk-react -- yarn build"
+    "start:starter": "lerna exec --scope @nostr-dev-kit/ndk-react-starter -- yarn dev",
+    "build": "lerna link && yarn build:module && yarn build:docs",
+    "build:docs": "lerna exec --scope @nostr-dev-kit/ndk-react-docs -- yarn build",
+    "build:module": "lerna exec --scope @nostr-dev-kit/ndk-react -- yarn build",
+    "build:starter": "lerna exec --scope @nostr-dev-kit/ndk-react-starter -- yarn build"
   },
   "devDependencies": {
     "@types/node": "18.6.1",
