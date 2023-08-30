@@ -15,7 +15,6 @@ export default function GetEvents() {
     };
 
     const events = await fetchEvents(filter);
-    console.log(events);
     setResults(events);
 
     setLoading(false);
