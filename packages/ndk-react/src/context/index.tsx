@@ -53,6 +53,7 @@ interface NDKContext {
         }
       | undefined
   ) => Promise<undefined | NDKEvent>;
+  logout: () => Promise<void>;
   getUser: (_: string) => NDKUser;
   getProfile: (_: string) => NDKUserProfile;
 }
@@ -65,6 +66,7 @@ const NDKContext = createContext<NDKContext>({
   loginWithSecret: (_: string) => Promise.resolve(undefined),
   loginWithNip07: () => Promise.resolve(undefined),
   signPublishEvent: (_: NDKEvent, __?: {}) => Promise.resolve(undefined),
+  logout: () => Promise.resolve(undefined),
   getUser: (_: string) => {
     return NDKUser.prototype;
   },
@@ -110,6 +112,10 @@ const NDKProvider = ({
     }
   }
 
+  async function logout() {
+    await setSigner(undefined);
+  }
+
   return (
     <NDKContext.Provider
       value={{
@@ -120,6 +126,7 @@ const NDKProvider = ({
         loginWithNip46,
         loginWithSecret,
         signPublishEvent,
+        logout,
         getUser,
         getProfile,
       }}

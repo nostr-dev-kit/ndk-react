@@ -43,10 +43,24 @@ export default function NDKInstance(explicitRelayUrls: string[]) {
     }
   }
 
+  function unloadNdk() {
+    if (ndk === undefined) return;
+    _setSigner(undefined);
+    const connectedRelays = ndk.pool.connectedRelays();
+    connectedRelays.forEach((relay) => {
+      relay.disconnect();
+    });
+    _setNDK(undefined);
+  }
+
   async function setSigner(
-    signer: NDKPrivateKeySigner | NDKNip46Signer | NDKNip07Signer
+    signer: NDKPrivateKeySigner | NDKNip46Signer | NDKNip07Signer | undefined
   ) {
-    loadNdk(explicitRelayUrls, signer);
+    if( signer !== undefined ) {
+      await loadNdk(explicitRelayUrls, signer);
+    } else {
+      unloadNdk();
+    }
   }
 
   async function fetchEvents(filter: NDKFilter): Promise<NDKEvent[]> {
