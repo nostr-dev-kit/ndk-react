@@ -1,7 +1,7 @@
 {
   "name": "@nostr-dev-kit/ndk-react",
   "license": "Apache-2.0",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "scripts": {
     "dev": "tsc && vite build --watch",
@@ -33,7 +33,7 @@
     "@vitejs/plugin-react": "^2.1.0",
     "eslint": "^8.2.0",
     "eslint-utils": "^3.0.0",
-    "@nostr-dev-kit/ndk": "0.7.7",
+    "@nostr-dev-kit/ndk": "^2.10.0",
     "@types/ramda": "^0.29.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
